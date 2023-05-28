@@ -4,16 +4,16 @@
     </header>
     <form>
         <label for="pensamento">Pensamento</label>
-        <input type="textarea" class="input" id="pensamento" name="pensamento" placeholder="Digite um pensamento">
+        <input type="textarea" class="input" id="pensamento" name="pensamento" placeholder="Digite um pensamento" [(ngModel)]="pensamento.conteudo">
         
         <label for="autoria">Autoria</label>
-        <input type="text" class="input" id="autoria" name="autoria" placeholder="Digite um autoria ou fonte">
+        <input type="text" class="input" id="autoria" name="autoria" placeholder="Digite um autoria ou fonte" [(ngModel)]="pensamento.autoria">
 
         <label for="modelo">Selecione o modelo de card:</label>
         <div class="container-radio">
             <div class="radio-modelo">
                 <label for="modelo1">
-                    <input type="radio" name="modelo-card" id="modelo1" value="modelo1">
+                    <input type="radio" name="modelo-card" id="modelo1" value="modelo1" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -22,14 +22,14 @@
                 Prévia:
                 <div class="modelo modelo1 ff-robo-mono">
                     <img src="../../../../assets/imagens/modelo1.png" alt="Modelo de Aspas azuis">
-                    <p class="conteudo">Aqui vai o conteudo</p>
-                    <p class="autoria"><b>Aqui vai a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
 
             <div class="radio-modelo">
                 <label for="modelo2">
-                    <input type="radio" name="modelo-card" id="modelo2" value="modelo2">
+                    <input type="radio" name="modelo-card" id="modelo2" value="modelo2" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -38,14 +38,14 @@
                 Prévia:
                 <div class="modelo modelo2 ff-robo-mono">
                     <img src="../../../../assets/imagens/modelo2.png" alt="Modelo de Aspas azuis claros">
-                    <p class="conteudo">Aqui vai o conteudo</p>
-                    <p class="autoria"><b>Aqui vai a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
 
             <div class="radio-modelo">
                 <label for="modelo3">
-                    <input type="radio" name="modelo-card" id="modelo3" value="modelo3">
+                    <input type="radio" name="modelo-card" id="modelo3" value="modelo3" [(ngModel)]="pensamento.modelo">
                     <div class="custom-radio">
                         <span></span>
                     </div>
@@ -54,15 +54,15 @@
                 Prévia:
                 <div class="modelo modelo3 ff-robo-mono">
                     <img src="../../../../assets/imagens/modelo3.png" alt="Modelo de Aspas verdes">
-                    <p class="conteudo">Aqui vai o conteudo</p>
-                    <p class="autoria"><b>Aqui vai a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
         </div>
 
         <div class="acoes">
-            <button class="botao">Salvar</button>
-            <button class="botao">Cancelar</button>
+            <button (click)="salvarPensamento()" class="botao">Salvar</button>
+            <button (click)="cancelarPensamento()" class="botao">Cancelar</button>
         </div>
 
     </form>
