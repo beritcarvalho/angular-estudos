@@ -1,22 +1,3 @@
 {
-    "pensamentos": [
-        {
-            "id": 1,
-            "conteudo": "adsasdasdas",
-            "autoria": "asdasdas",
-            "modelo": "modelo1"
-        },
-        {
-            "id": 2,
-            "conteudo": "adsasdasdas",
-            "autoria": "asdasdas",
-            "modelo": "modelo2"
-        },
-        {
-            "id": 3,
-            "conteudo": "adsasdasdas",
-            "autoria": "asdasdas",
-            "modelo": "modelo3"
-        }
-    ]
+  "pensamentos": []
 }
