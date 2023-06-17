@@ -20,7 +20,8 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   constructor(pensamentoService: PensamentoService,
-    router: Router) { 
+    router: Router) 
+   { 
     this._pensamentoService = pensamentoService;
     this._router = router;
   }
@@ -35,7 +36,7 @@ export class CriarPensamentoComponent implements OnInit {
   }
 
   public  cancelarPensamento(): void {
-    alert('Pensameto cancelado');
+    alert('Cancelado');
     this._router.navigate(['/listarPensamento']);
   }
 
