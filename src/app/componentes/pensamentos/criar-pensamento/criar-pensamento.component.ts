@@ -32,12 +32,12 @@ export class CriarPensamentoComponent implements OnInit {
   public  salvarPensamento(): void {
     this._pensamentoService.criar(this.pensamento).subscribe();
     alert('Pensamento salvo com sucesso');    
-    this._router.navigate(['/listarPensamento']);
+    this._router.navigate(['/listarPensamentos']);
   }
 
   public  cancelarPensamento(): void {
     alert('Cancelado');
-    this._router.navigate(['/listarPensamento']);
+    this._router.navigate(['/listarPensamentos']);
   }
 
 }

@@ -40,11 +40,11 @@ export class ExcluirPensamentoComponent implements OnInit {
       this._pensamentoService.excluir(this.pensamento.id).subscribe();
     }
 
-    this._router.navigate(['/listarPensamento']);
+    this._router.navigate(['/listarPensamentos']);
   }
 
   public cancelar(): void {
-    this._router.navigate(['/listarPensamento']);
+    this._router.navigate(['/listarPensamentos']);
   }
   
 }

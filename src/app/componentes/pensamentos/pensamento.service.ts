@@ -30,6 +30,11 @@ export class PensamentoService {
     return this._http.delete<Pensamento>(urlPensamento);
   }
 
+  public editar(pensamento: Pensamento): Observable<Pensamento> {
+    const urlPensamento = `${this._url}/${pensamento.id}`;
+    return this._http.put<Pensamento>(urlPensamento, pensamento);
+  }
+
   public obterPorId(id: number): Observable<Pensamento> {
     const urlPensamento = `${this._url}/${id}`;
     return this._http.get<Pensamento>(urlPensamento);
