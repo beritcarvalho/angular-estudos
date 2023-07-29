@@ -5,9 +5,11 @@
     <form [formGroup]="formulario">
         <label for="pensamento">Pensamento</label>
         <input type="textarea" class="input" id="pensamento" formControlName="conteudo" placeholder="Digite um pensamento">
+        <div class="mensagem_erro" *ngIf="formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched">{{ mensagensErros.conteudo }}</div>
         
         <label for="autoria">Autoria</label>
         <input type="text" class="input" id="autoria" formControlName="autoria" placeholder="Digite um autoria ou fonte">
+        <div class="mensagem_erro" *ngIf="formulario.get('autoria')?.errors && formulario.get('autoria')?.touched">{{ mensagensErros.autoria }}</div>
 
         <label for="modelo">Selecione o modelo de card:</label>
         <div class="container-radio">
@@ -61,7 +63,12 @@
         </div>
 
         <div class="acoes">
-            <button (click)="salvarPensamento()" class="botao">Salvar</button>
+            <button 
+                (click)="salvarPensamento()" 
+                [disabled]="!formulario.valid"
+                [ngClass]="habilitarBotao()"
+            >Salvar
+            </button>
             <button (click)="cancelarPensamento()" class="botao">Cancelar</button>
         </div>
 
